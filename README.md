@@ -1,16 +1,55 @@
-# React + Vite
+# todoX (Node.js + MongoDB)
+A lightweight, modular node.js API for a web. Handles card with basic functions and UX/UI simple, friendly interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- RESTful resources: Tasks.
+- Paging and filtering of task statuses.
+- Input validation & error handling.
+- CORS (allowlist) for the Render frontend.
+- Production-safe Mongo connection & env validation.
 
-Currently, two official plugins are available:
+## Tech
+- **Node.js 20.12.x + Shadcn**
+- **MongoDB Atlas** (Database)
+- **ESLint** (babel parser)
+- **Nodemon** (Build/Run)
+- Deploy: **Render**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live:** https://todox-api.onrender.com
 
-## React Compiler
+## Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Here’s a quick look at the UI:
 
-## Expanding the ESLint configuration
+![todoX Demo](src/assets/demo.gif)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Environment Variables
+Create `packages/server/.env` (values are examples):
+
+```dotenv
+MONGO_CONNECTIONSTRING=mongodb+srv://<user>:<pass>@cluster.mongodb.net/?retryWrites=true&w=majority
+PORT=''
+```
+
+*Important: **MONGODB_URI** must be a single line (no quotes, no line breaks).*
+
+## Quick Start ()
+
+```bash
+# 1) Require: Node.js >= 20+
+node -v
+
+# 2) Cài các dependency
+npm install
+
+# 3) Tạo file .env (ví dụ)
+# (Có thể tạo thủ công bằng VSCode hoặc echo nhanh như bên dưới)
+echo "MONGODB_URI=mongodb+srv://<user>:<pass>@cluster.mongodb.net/?retryWrites=true&w=majority
+DATABASE_NAME=trello-quangminh
+PORT=8080
+NODE_ENV=development" > .env
+
+# 4) Chạy môi trường dev
+npm run dev
+```
